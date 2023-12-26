@@ -51,7 +51,7 @@ if(validateName(userNameInput.value) && validateEmail(emailInput.value) && valid
     }
     users.push(user)
     localStorage.setItem("users" , JSON.stringify(users))
-    window.location.href = "../html/index.html";
+    window.location.href = "../index.html";
     
   }
 }else{
@@ -75,12 +75,12 @@ var emailLogin=document.querySelector(".emailLogin")
 function SigninUser(){
   for(var i=0; i<users.length; i++){
     if(emailLogin.value== users[i].email && passwordLogin.value==users[i].password){
-      window.location.href = "../html/home.html";
+      window.location.href = "./html/home.html";
       localStorage.setItem("userName", JSON.stringify(users[i].userName)) 
      
     }else if(emailLogin.value== "" || passwordLogin.value==""){
       document.querySelector(".invalidInput").innerHTML= "All inputs is required"
-      
+
     }else if(emailLogin.value != users[i].email || passwordLogin.value !=users[i].password){
       document.querySelector(".invalidInput").innerHTML= "incorrect email or password"
     }
